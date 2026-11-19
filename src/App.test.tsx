@@ -13,7 +13,7 @@ function renderAt(path: string) {
 
 test("shows the home page", () => {
   renderAt("/");
-  expect(screen.getByRole("heading", { name: "React on Spectivis Cloud" })).toBeTruthy();
+  expect(screen.getByRole("heading", { name: "Your starter React app" })).toBeTruthy();
 });
 
 test("shows the about page at its own path", () => {
