@@ -1,26 +1,25 @@
 import { NavLink, Route, Routes } from "react-router-dom";
+import { version as reactVersion } from "react";
 import { About } from "./pages/About";
 import { Home } from "./pages/Home";
 import { NotFound } from "./pages/NotFound";
 
 export function App() {
   return (
-    <>
-      <header className="bar">
-        <div className="wrap">
-          <a className="wordmark" href="https://spectivis.com">
-            Spectivis <span>Cloud</span>
+    <div className="page">
+      <header className="top">
+        <span className="host">React sample</span>
+        <nav aria-label="Pages">
+          <NavLink to="/" end>
+            Home
+          </NavLink>
+          <NavLink to="/about">About</NavLink>
+          <a className="outline" href="https://spectivis.com">
+            Spectivis Cloud
           </a>
-          <nav aria-label="Pages">
-            <NavLink to="/" end>
-              Home
-            </NavLink>
-            <NavLink to="/about">About</NavLink>
-            <NavLink to="/about/deep/link">Deep link</NavLink>
-          </nav>
-        </div>
+        </nav>
       </header>
-      <main className="wrap">
+      <main>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
@@ -28,11 +27,9 @@ export function App() {
         </Routes>
       </main>
       <footer className="foot">
-        <div className="wrap">
-          <span>Hosted on Spectivis Cloud</span>
-          <a href="https://spectivis.com">spectivis.com</a>
-        </div>
+        <span>React {reactVersion}, built with Vite</span>
+        <a href="https://spectivis.com">spectivis.com</a>
       </footer>
-    </>
+    </div>
   );
 }
